@@ -1,10 +1,10 @@
 # 🚀 Mini LinkedIn - Community Platform
 
-A simple LinkedIn-like community platform built with **React** and **Firebase**, featuring user authentication, public post feed, and user profiles.
+A simple LinkedIn-like community platform built with **React** and **Firebase**, featuring user authentication, a public post feed, and user profiles.
 
 ## 🔧 Tech Stack
 
-* **Frontend:** React + Vite + TailwindCSS
+* **Frontend:** React + Vite + Tailwind CSS
 * **Backend / Database:** Firebase (Auth + Firestore)
 * **Hosting:** Vercel
 
@@ -14,43 +14,38 @@ A simple LinkedIn-like community platform built with **React** and **Firebase**,
 
 * Register / Login with email & password
 * Firebase Authentication
-* Persisted user sessions
+* Persistent login sessions
 
-### 2. 📰 Public Post Feed
+### 2. 🔜 Public Post Feed
 
 * Create and view text-only posts
 * Posts display author name and timestamp
+* Posts are public to all logged-in users
 
 ### 3. 😋 Profile Page
 
-* View user’s profile
-* Bio, email, name shown
+* View your own and others’ profiles
+* Bio, email, and name displayed
 * See all posts made by the user
 
 ### 4. 📱 Responsive Design
 
-* Fully responsive UI using TailwindCSS
+* Fully responsive UI using Tailwind CSS
 
 ## 🧪 Demo Credentials
 
-> You can register with any email/password or use the following:
+You can register with your own credentials, or use the demo login:
 
 ```
-Email: demo@ciaan.com
+Email: demo@ciaan.com  
 Password: 123456
 ```
-
-## 🌐 Live Demo
-
-👉 [**View Deployed App Here**](https://your-vercel-link.vercel.app)
-(Replace with actual URL after deployment)
-
 ## 🚀 Getting Started (Local Setup)
 
 ### Prerequisites
 
 * Node.js & npm
-* Firebase project with Firestore and Authentication enabled
+* A Firebase project with Authentication and Firestore enabled
 
 ### Clone & Install
 
@@ -60,35 +55,32 @@ cd mini-linkedin
 npm install
 ```
 
-### Setup Firebase Config
+### Firebase Config
 
-Create a `.env` file in root:
+Firebase config is hardcoded inside `src/firebase.js`:
 
+```js
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  ...
+};
 ```
-VITE_API_KEY=your_api_key
-VITE_AUTH_DOMAIN=your_auth_domain
-VITE_PROJECT_ID=your_project_id
-VITE_STORAGE_BUCKET=your_storage_bucket
-VITE_MESSAGING_SENDER_ID=your_sender_id
-VITE_APP_ID=your_app_id
-```
 
-> You can get these values from your Firebase Console → Project Settings
+You can copy your Firebase credentials from your Firebase Console → Project Settings.
 
-### Start Dev Server
+### Start Development Server
 
 ```bash
 npm run dev
 ```
 
-## 📦 Deployment
+## 📦 Deployment (on Vercel)
 
-Deployed using [Vercel](https://vercel.com) for quick, free hosting.
-To deploy:
-
-1. Push your code to GitHub
-2. Connect your GitHub repo to Vercel
-3. Add your Firebase environment variables in Vercel project settings
+1. Push your project to GitHub
+2. Go to [https://vercel.com](https://vercel.com)
+3. Import your GitHub repo
 4. Deploy 🎉
 
 ## 📁 Folder Structure
@@ -109,7 +101,4 @@ src/
 └── main.jsx
 ```
 
-## 📌 Notes
-
-* Built within 48 hours as part of the **CIAAN Cyber Tech Internship** challenge.
-* Focused on clean UI, responsive design, and working core features.
+---
